@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I tuoi contatti</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-xX2Ow1KbdP3kciDuaKZLk9z2c+I4x0/k9mQU4Hrv4eNbXyKYgRZ0ot0x3TmhgOICOHFDwQPGVdB+RJ/09+1jrw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --bg: #f5f5f5;
+      --card: #ffffff;
+      --primary: #0a66c2;
+      --text: #101010;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .card {
+      background: var(--card);
+      padding: 2rem 2.5rem;
+      border-radius: 1.25rem;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, .08);
+      text-align: center;
+      width: 360px;
+    }
+    .card img {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 1.25rem;
+      margin: 0 0 .25rem;
+    }
+    p.subtitle {
+      margin: .25rem 0 1.5rem;
+      color: #555;
+      font-size: .95rem;
+    }
+    .link-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .link-list li {
+      margin-bottom: .75rem;
+    }
+    .link-list a {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      justify-content: center;
+      padding: .8rem 1rem;
+      border-radius: .8rem;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .link-list a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+    }
+    .link-list a.secondary {
+      background: #444;
+    }
+    footer {
+      margin-top: 1.5rem;
+      font-size: .75rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <img src="avatar.jpg" alt="Avatar">
+
+    <h1>Francesco Mataloni</h1>
+    <p class="subtitle">Country Manager Italy</p>
+    <p class="subtitle">fiskaltrust</p>
+
+    <ul class="link-list">
+      <li><a href="https://www.linkedin.com/in/francesco-mataloni" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a></li>
+      <li><a href="https://fiskaltrust.eu" class="secondary" target="_blank"><i class="fa-solid fa-globe"></i>fiskaltrust web</a></li>
+      <li><a href="my-contact.vcf" download><i class="fa-solid fa-address-card"></i>Save VCARD</a></li>
+    </ul>
+
+    <footer>&copy; 2025 Francesco Mataloni</footer>
+  </main>
+</body>
+</html>
