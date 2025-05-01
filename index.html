@@ -7,80 +7,44 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-…"
-      crossorigin="anonymous" referrerpolicy="no-referrer">
   <style>
-    :root {
-      /* palette base per hover/shadow */
-      --shadow: rgba(0, 0, 0, .1);
+    :root { --shadow: rgba(0, 0, 0, .08); }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      background:#f5f5f5;font-family:'Inter',sans-serif;
+      display:flex;align-items:center;justify-content:center;min-height:100vh;
     }
-    body {
-      margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-      font-family: 'Inter', sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+    .card{
+      background:#fff;width:380px;border-radius:1.25rem;
+      padding:2rem 2.5rem;box-shadow:0 6px 14px var(--shadow);text-align:center;
     }
-    .card {
-      background: #ffffff;
-      padding: 2rem 2.5rem;
-      border-radius: 1.25rem;
-      box-shadow: 0 6px 14px var(--shadow);
-      text-align: center;
-      width: 360px;
+    .avatar{width:96px;height:96px;border-radius:50%;object-fit:cover;margin-bottom:1rem;}
+    h1{font-size:1.25rem;margin-bottom:.25rem;}
+    .subtitle{color:#555;font-size:.95rem;margin-bottom:1.5rem;}
+
+    /* sezioni generiche */
+    .section{padding:1rem 1rem 1.25rem;border-radius:1rem;margin-bottom:1rem;position:relative;overflow:hidden;}
+    .section h2{font-size:.95rem;font-weight:600;margin-bottom:.8rem;color:#222;position:relative;z-index:2;}
+
+    /* sfondo piatto (prima sezione) */
+    .bg-main{background:#e9f2ff;}
+
+    /* sezioni con immagine di sfondo */
+    .bg-ftit{
+      background:linear-gradient(rgba(255,255,255,.85),rgba(255,255,255,.85)),url('italy.png') center/cover no-repeat;
     }
-    .card img.avatar {
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
-    h1 {
-      font-size: 1.25rem;
-      margin: 0 0 .25rem;
-    }
-    p.subtitle {
-      margin: .25rem 0 1.5rem;
-      color: #555;
-      font-size: .95rem;
+    .bg-ft{
+      background:linear-gradient(rgba(255,255,255,.85),rgba(255,255,255,.85)),url('europe.png') center/cover no-repeat;
     }
 
     /* lista link */
-    .link-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .link-list li {
-      margin-bottom: .75rem;
-    }
-    .link-list a {
-      display: flex;
-      align-items: center;
-      gap: .65rem;
-      justify-content: center;
-      padding: .8rem 1rem;
-      border-radius: .8rem;
-      color: #fff;
-      font-weight: 600;
-      text-decoration: none;
-      transition: transform .15s ease, box-shadow .15s ease;
-    }
-    .link-list a:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 12px var(--shadow);
-    }
-    /* icone img */
-    .icon {
-      width: 20px;
-      height: 20px;
-    }
+    .link-list{list-style:none;display:flex;flex-direction:column;gap:.75rem;position:relative;z-index:2;}
+    .link-list a{
+      display:flex;align-items:center;gap:.6rem;justify-content:center;
+      padding:.8rem 1rem;border-radius:.8rem;color:#fff;font-weight:600;text-decoration:none;
+      transition:transform .15s ease, box-shadow .15s ease;}
+    .link-list a:hover{transform:translateY(-3px);box-shadow:0 4px 12px var(--shadow);}
+    .icon{width:20px;height:20px;}
 
     /* === classi colore bottoni === */
     .btn-linkedin   { background: #0a66c2; }
@@ -106,59 +70,74 @@
 </head>
 <body>
   <main class="card">
-    <img src="avatar.jpg" alt="Avatar" style="width: 280px;">
+    <img src="avatar.jpg" alt="Avatar" class="avatar">
 
     <h1>Francesco Mataloni</h1>
     <p class="subtitle">Country Manager Italy</p>
     <p class="subtitle">fiskaltrust</p>
 
-    <ul class="link-list">
-      <li>
-        <a href="Francesco Mataloni.vcf" download class="btn-vcard">
-          <img src="avatar.jpg" alt="VCard" class="icon"> Save VCARD
-        </a>
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/in/francesco-mataloni" target="_blank" class="btn-linkedin">
-          <i class="fa-brands fa-linkedin fa-lg"></i> LinkedIn
-        </a>
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/in/francesco-mataloni/recent-activity/all/" class="btn-linkedinposts">
-          <i class="fa-brands fa-linkedin fa-lg"></i> LinkedIn Posts
-        </a>
-      </li>
-      <li>
-        <a href="https://fiskaltrust.eu/en-it/" target="_blank" class="btn-ftit">
-          <img src="ft.png" alt="LinkedIn" class="icon"> fiskaltrust IT web
-        </a>
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/showcase/fiskaltrust-company-it" target="_blank" class="btn-linkedin">
-          <i class="fa-brands fa-linkedin fa-lg"></i><img src="italy.png" alt="LinkedInItaly" class="icon">  LinkedIn fiskaltrust Italia
-        </a>
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/showcase/fiskaltrust-company-it/posts" class="btn-linkedinposts">
-          <i class="fa-brands fa-linkedin fa-lg"></i><img src="italy.png" alt="LinkedInItalyPosts" class="icon"> LinkedIn fiskaltrust Italia Posts
-        </a>
-      </li>
-      <li>
-        <a href="https://fiskaltrust.eu" target="_blank" class="btn-ft">
-          <img src="ft.png" alt="LinkedIn" class="icon"> fiskaltrust EU web
-        </a>
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/company/fiskaltrust" target="_blank" class="btn-linkedin">
-          <i class="fa-brands fa-linkedin fa-lg"></i><img src="europe.png" alt="LinkedInEurope" class="icon"> LinkedIn fiskaltrust
-        </a>
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/company/fiskaltrust/posts" class="btn-linkedinposts">
-          <i class="fa-brands fa-linkedin fa-lg"></i><img src="europe.png" alt="LinkedInEuropePosts" class="icon"> LinkedIn fiskaltrust Posts
-        </a>
-      </li>
-    </ul>
+    <div class="section bg-main">
+      <h2>Social</h2>
+      <ul class="link-list">
+        <li>
+          <a href="Francesco Mataloni.vcf" download class="btn-vcard">
+            <img src="avatar.jpg" alt="VCard" class="icon"> Save VCARD
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/francesco-mataloni" target="_blank" class="btn-linkedin">
+            <i class="fa-brands fa-linkedin fa-lg"></i> LinkedIn
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/francesco-mataloni/recent-activity/all/" class="btn-linkedinposts">
+            <i class="fa-brands fa-linkedin fa-lg"></i> LinkedIn Posts
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section bg-ftit">
+      <h2>fiskaltrust Italia</h2>
+      <ul class="link-list">
+        <li>
+          <a href="https://fiskaltrust.eu/en-it/" target="_blank" class="btn-ftit">
+            <img src="ft.png" alt="LinkedIn" class="icon"> fiskaltrust IT web
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/showcase/fiskaltrust-company-it" target="_blank" class="btn-linkedin">
+            <i class="fa-brands fa-linkedin fa-lg"></i> LinkedIn
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/showcase/fiskaltrust-company-it/posts" class="btn-linkedinposts">
+            <i class="fa-brands fa-linkedin fa-lg"></i> LinkedIn Posts
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section bg-ft">
+      <h2>fiskaltrust</h2>
+      <ul class="link-list">
+        <li>
+          <a href="https://fiskaltrust.eu" target="_blank" class="btn-ft">
+            <img src="ft.png" alt="LinkedIn" class="icon"> fiskaltrust EU web
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/company/fiskaltrust" target="_blank" class="btn-linkedin">
+            <i class="fa-brands fa-linkedin fa-lg"></i> LinkedIn
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/company/fiskaltrust/posts" class="btn-linkedinposts">
+            <i class="fa-brands fa-linkedin fa-lg"></i> LinkedIn Posts
+          </a>
+        </li>
+      </ul>
+    </div>
 
     <footer>&copy; 2025 Francesco Mataloni</footer>
   </main>
