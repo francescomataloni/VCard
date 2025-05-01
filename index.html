@@ -7,18 +7,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-xX2Ow1KbdP3kciDuaKZLk9z2c+I4x0/k9mQU4Hrv4eNbXyKYgRZ0ot0x3TmhgOICOHFDwQPGVdB+RJ/09+1jrw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-…"
+      crossorigin="anonymous" referrerpolicy="no-referrer">
   <style>
     :root {
-      --bg: #f5f5f5;
-      --card: #ffffff;
-      --primary: #0a66c2;
-      --text: #101010;
+      /* palette base per hover/shadow */
+      --shadow: rgba(0, 0, 0, .1);
     }
     body {
       margin: 0;
       padding: 0;
-      background: var(--bg);
+      background: #f5f5f5;
       font-family: 'Inter', sans-serif;
       display: flex;
       align-items: center;
@@ -26,14 +27,14 @@
       min-height: 100vh;
     }
     .card {
-      background: var(--card);
+      background: #ffffff;
       padding: 2rem 2.5rem;
       border-radius: 1.25rem;
-      box-shadow: 0 6px 14px rgba(0, 0, 0, .08);
+      box-shadow: 0 6px 14px var(--shadow);
       text-align: center;
       width: 360px;
     }
-    .card img {
+    .card img.avatar {
       width: 96px;
       height: 96px;
       border-radius: 50%;
@@ -49,6 +50,8 @@
       color: #555;
       font-size: .95rem;
     }
+
+    /* lista link */
     .link-list {
       list-style: none;
       margin: 0;
@@ -60,23 +63,40 @@
     .link-list a {
       display: flex;
       align-items: center;
-      gap: .5rem;
+      gap: .65rem;
       justify-content: center;
       padding: .8rem 1rem;
       border-radius: .8rem;
-      background: var(--primary);
-      color: white;
-      text-decoration: none;
+      color: #fff;
       font-weight: 600;
+      text-decoration: none;
       transition: transform .15s ease, box-shadow .15s ease;
     }
     .link-list a:hover {
       transform: translateY(-3px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+      box-shadow: 0 4px 12px var(--shadow);
     }
-    .link-list a.secondary {
-      background: #444;
+    /* icone img */
+    .icon {
+      width: 20px;
+      height: 20px;
     }
+
+    /* === classi colore bottoni === */
+    .btn-linkedin   { background: #0a66c2; }
+    .btn-linkedinposts   { background: #444444; }
+    .btn-vcard  { background: #25d366; }
+    .btn-ft    { background: #c4302b; }
+    .btn-ftit { background: #ef6c00; }
+    .btn-purple { background: #9146ff; }
+    /* lighten on hover */
+    .btn-linkedin:hover   { filter: brightness(1.1); }
+    .btn-linkedinposts:hover   { filter: brightness(1.1); }
+    .btn-vcard:hover  { filter: brightness(1.1); }
+    .btn-ft:hover    { filter: brightness(1.1); }
+    .btn-ftit:hover { filter: brightness(1.1); }
+    .btn-purple:hover { filter: brightness(1.1); }
+
     footer {
       margin-top: 1.5rem;
       font-size: .75rem;
@@ -93,10 +113,32 @@
     <p class="subtitle">fiskaltrust</p>
 
     <ul class="link-list">
-      <li><a href="https://www.linkedin.com/in/francesco-mataloni" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a></li>
-      <li><a href="https://fiskaltrust.eu" class="secondary" target="_blank"><i class="fa-solid fa-globe"></i>fiskaltrust web</a></li>
-      <li><a href="Francesco Mataloni.vcf" download><i class="fa-solid fa-address-card"></i>Save VCARD</a></li>
-      <li><a href="https://www.linkedin.com/in/francesco-mataloni/recent-activity/all/" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn Posts</a></li>
+      <li>
+        <a href="https://www.linkedin.com/in/francesco-mataloni" target="_blank" class="btn-linkedin">
+          <i class="fa-brands fa-linkedin fa-lg"></i>
+          <img src="avatar.jpg" alt="LinkedIn" class="icon"> LinkedIn
+        </a>
+      </li>
+      <li>
+        <a href="Francesco Mataloni.vcf" download class="btn-vcard">
+          <img src="avatar.jpg" alt="VCard" class="icon"> Save VCARD
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/francesco-mataloni/recent-activity/all/" class="btn-linkedinposts">
+          LinkedIn Posts
+        </a>
+      </li>
+      <li>
+        <a href="https://fiskaltrust.eu" class="secondary" target="_blank" class="btn-ft">
+          fiskaltrust EU web
+        </a>
+      </li>
+      <li>
+        <a href="https://fiskaltrust.eu/en-it/" class="secondary" target="_blank" class="btn-ftit">
+          fiskaltrust IT web
+        </a>
+      </li>
     </ul>
 
     <footer>&copy; 2025 Francesco Mataloni</footer>
